@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Parent Management System</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-dark bg-primary navbar-expand-sm">
+
+    <a class="navbar-brand" href="#">Parents Management System</a>
+
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ">
+            <li class="nav-item ">
+                <a class="nav-link " th:href="@{/parents/new}">Add new Parent</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{http://localhost:8080/}">Main Page</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+
+<div class ="container bg-image"
+     style="background-image: url('https://img.freepik.com/free-vector/parents-concept-illustration_114360-4137.jpg?w=2000');
+height: 100vh" >
+    <div class = "row">
+        <h1>  List of Parents </h1>
+    </div>
+
+    <div class = "row">
+        <div class = "col-lg-3">
+            <a th:href = "@{/parents/new}" class = "btn btn-primary btn-sm mb-3"> Add Parent</a>
+        </div>
+    </div>
+    <table class = "table table-striped table-bordered">
+        <thead class = "table-dark">
+        <tr>
+            <th> Parent First Name</th>
+            <th> Parent Last Name</th>
+            <th> Parent Email </th>
+            <th> Parent Address </th>
+            <th> Parent Child name </th>
+            <th> Actions </th>
+        </tr>
+        </thead>
+        <div class="white-text">
+            <tbody >
+            <tr th:each = "parent: ${parents}" >
+                <td th:text = "${parent.firstName}" ></td>
+                <td th:text = "${parent.lastName}"></td>
+                <td th:text = "${parent.email}"></td>
+                <td th:textfield = "${parent.address}"></td>
+                <td th:text = "${parent.childName}"></td>
+                <td>
+                    <a th:href = "@{/parents/edit/{id}(id=${parent.id})}"
+                       class = "btn btn-primary">Update</a>
+
+                    <a th:href = "@{/parents/{id}(id=${parent.id})}"
+                       class = "btn btn-danger">Delete</a>
+
+                </td>
+            </tr>
+            </tbody>
+        </div>
+
+
+    </table>
+
+</div>
+</body>
+</html>

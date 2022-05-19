@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Parents list</title>
+
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+
+</head>
+<body>
+<div class="view" style="background-image: url('https://images.news18.com/ibnlive/uploads/2021/07/1627190797_family-1200x800.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="mask rgba-black-light align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb-4 white-text text-center">
+                    <h1 class="h1-responsive  text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown text-light " data-wow-delay="0.3s"><strong>Parents list</strong></h1>
+                    <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
+                    <h5 class="text-uppercase mb-4 white-text wow fadeInDown text-light" data-wow-delay="0.4s"><strong>Welcome here!</strong></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<h2>Here you can add new Parent</h2>
+<div class = "row">
+    <div class = "col-lg-3">
+        <a th:href = "@{/parents/new}" class = "btn btn-success btn-sm mb-3"> Add Parent:</a>
+    </div>
+</div>
+<h2>Here you can see the list of your Parents:</h2>
+<div class = "row">
+    <div class = "col-lg-3">
+        <a th:href = "@{/parents}" class = "btn btn-info btn-sm mb-3">Get all Parents</a>
+    </div>
+</div>
+</body>
+</html>
